@@ -1,0 +1,593 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+  <meta charset="UTF-8">  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  
+  <title>Sashank Acharya | Personal Portfolio</title>  
+  
+  <style>  
+    * {  
+      margin: 0;  
+      padding: 0;  
+      box-sizing: border-box;  
+      scroll-behavior: smooth;  
+    }  
+  
+    body {  
+      font-family: Arial, sans-serif;  
+      background: #0b1120;  
+      color: #f8fafc;  
+      line-height: 1.6;  
+    }  
+  
+    /* NAVBAR */  
+    nav {  
+      position: fixed;  
+      top: 0;  
+      width: 100%;  
+      padding: 18px 8%;  
+      background: rgba(11, 17, 32, 0.95);  
+      display: flex;  
+      justify-content: space-between;  
+      align-items: center;  
+      z-index: 1000;  
+      border-bottom: 1px solid #1e293b;  
+    }  
+  
+    .logo {  
+      font-size: 24px;  
+      font-weight: bold;  
+    }  
+  
+    .logo span {  
+      color: #38bdf8;  
+    }  
+  
+    nav ul {  
+      list-style: none;  
+      display: flex;  
+      gap: 25px;  
+    }  
+  
+    nav a {  
+      color: #cbd5e1;  
+      text-decoration: none;  
+      font-size: 15px;  
+    }  
+  
+    nav a:hover {  
+      color: #38bdf8;  
+    }  
+  
+    /* GENERAL */  
+    section {  
+      padding: 100px 8%;  
+    }  
+  
+    .container {  
+      max-width: 1100px;  
+      margin: auto;  
+    }  
+  
+    .section-title {  
+      text-align: center;  
+      font-size: 34px;  
+      margin-bottom: 50px;  
+    }  
+  
+    .section-title span {  
+      color: #38bdf8;  
+    }  
+  
+    /* HOME */  
+    #home {  
+      min-height: 100vh;  
+      display: flex;  
+      align-items: center;  
+      padding-top: 120px;  
+    }  
+  
+    .hero {  
+      display: flex;  
+      justify-content: space-between;  
+      align-items: center;  
+      gap: 50px;  
+      width: 100%;  
+    }  
+  
+    .hero-text {  
+      flex: 1;  
+    }  
+  
+    .hero-text h1 {  
+      font-size: 55px;  
+      margin-bottom: 10px;  
+    }  
+  
+    .hero-text h1 span {  
+      color: #38bdf8;  
+    }  
+  
+    .hero-text h2 {  
+      font-size: 25px;  
+      color: #94a3b8;  
+      margin-bottom: 20px;  
+    }  
+  
+    .hero-text p {  
+      color: #cbd5e1;  
+      max-width: 600px;  
+      margin-bottom: 30px;  
+    }  
+  
+    .location {  
+      color: #94a3b8;  
+      margin-bottom: 25px;  
+    }  
+  
+    .btn {  
+      display: inline-block;  
+      padding: 13px 25px;  
+      background: #38bdf8;  
+      color: #07111f;  
+      text-decoration: none;  
+      border-radius: 8px;  
+      font-weight: bold;  
+      margin-right: 10px;  
+    }  
+  
+    .btn:hover {  
+      opacity: 0.85;  
+    }  
+  
+    .btn-outline {  
+      background: transparent;  
+      color: #38bdf8;  
+      border: 1px solid #38bdf8;  
+    }  
+  
+    /* PHOTO */  
+    .profile-photo {  
+      width: 280px;  
+      height: 280px;  
+      border-radius: 50%;  
+      border: 5px solid #38bdf8;  
+      display: flex;  
+      align-items: center;  
+      justify-content: center;  
+      color: #94a3b8;  
+      text-align: center;  
+      padding: 30px;  
+      background: #111827;  
+    }  
+  
+    /* ABOUT */  
+    .about-box {  
+      max-width: 850px;  
+      margin: auto;  
+      background: #111827;  
+      padding: 35px;  
+      border-radius: 15px;  
+      border: 1px solid #1e293b;  
+    }  
+  
+    .about-box p {  
+      color: #cbd5e1;  
+    }  
+  
+    /* EDUCATION */  
+    .education-card {  
+      max-width: 750px;  
+      margin: auto;  
+      background: #111827;  
+      padding: 30px;  
+      border-left: 4px solid #38bdf8;  
+      border-radius: 10px;  
+    }  
+  
+    .education-card h3 {  
+      font-size: 24px;  
+      margin-bottom: 8px;  
+    }  
+  
+    .education-card h4 {  
+      color: #38bdf8;  
+      margin-bottom: 10px;  
+    }  
+  
+    .education-card p {  
+      color: #cbd5e1;  
+    }  
+  
+    /* SKILLS */  
+    .skills {  
+      display: grid;  
+      grid-template-columns: repeat(4, 1fr);  
+      gap: 18px;  
+    }  
+  
+    .skill {  
+      background: #111827;  
+      padding: 22px;  
+      text-align: center;  
+      border-radius: 10px;  
+      border: 1px solid #1e293b;  
+      transition: 0.3s;  
+    }  
+  
+    .skill:hover {  
+      transform: translateY(-5px);  
+      border-color: #38bdf8;  
+    }  
+  
+    .skill h3 {  
+      font-size: 17px;  
+    }  
+  
+    /* PROJECTS */  
+    .projects {  
+      display: grid;  
+      grid-template-columns: repeat(2, 1fr);  
+      gap: 25px;  
+    }  
+  
+    .project {  
+      background: #111827;  
+      padding: 30px;  
+      border-radius: 12px;  
+      border: 1px solid #1e293b;  
+    }  
+  
+    .project h3 {  
+      color: #38bdf8;  
+      margin-bottom: 12px;  
+    }  
+  
+    .project p {  
+      color: #cbd5e1;  
+    }  
+  
+    /* CONTACT */  
+    .contact-box {  
+      max-width: 700px;  
+      margin: auto;  
+      text-align: center;  
+      background: #111827;  
+      padding: 35px;  
+      border-radius: 15px;  
+    }  
+  
+    .contact-item {  
+      margin: 18px 0;  
+      color: #cbd5e1;  
+    }  
+  
+    .contact-item strong {  
+      color: #38bdf8;  
+    }  
+  
+    /* FOOTER */  
+    footer {  
+      text-align: center;  
+      padding: 25px;  
+      border-top: 1px solid #1e293b;  
+      color: #94a3b8;  
+    }  
+  
+    /* MOBILE */  
+    @media (max-width: 800px) {  
+  
+      nav {  
+        padding: 15px 5%;  
+      }  
+  
+      nav ul {  
+        gap: 12px;  
+      }  
+  
+      nav a {  
+        font-size: 12px;  
+      }  
+  
+      section {  
+        padding: 80px 5%;  
+      }  
+  
+      .hero {  
+        flex-direction: column-reverse;  
+        text-align: center;  
+      }  
+  
+      .hero-text h1 {  
+        font-size: 40px;  
+      }  
+  
+      .hero-text h2 {  
+        font-size: 20px;  
+      }  
+  
+      .profile-photo {  
+        width: 220px;  
+        height: 220px;  
+      }  
+  
+      .skills {  
+        grid-template-columns: repeat(2, 1fr);  
+      }  
+  
+      .projects {  
+        grid-template-columns: 1fr;  
+      }  
+  
+      .section-title {  
+        font-size: 28px;  
+      }  
+    }  
+  
+    @media (max-width: 450px) {  
+  
+      nav .logo {  
+        font-size: 18px;  
+      }  
+  
+      nav ul {  
+        gap: 8px;  
+      }  
+  
+      nav a {  
+        font-size: 10px;  
+      }  
+  
+      .skills {  
+        grid-template-columns: 1fr;  
+      }  
+  
+      .hero-text h1 {  
+        font-size: 34px;  
+      }  
+  
+      .btn {  
+        display: block;  
+        margin: 10px 0;  
+      }  
+    }  
+  </style>  
+</head>  
+  
+<body>  
+  
+  <!-- NAVIGATION -->  
+  <nav>  
+    <div class="logo">Sashank<span>.</span></div>  
+  
+    <ul>  
+      <li><a href="#home">Home</a></li>  
+      <li><a href="#about">About</a></li>  
+      <li><a href="#education">Education</a></li>  
+      <li><a href="#skills">Skills</a></li>  
+      <li><a href="#projects">Projects</a></li>  
+      <li><a href="#contact">Contact</a></li>  
+    </ul>  
+  </nav>  
+  
+  
+  <!-- HOME -->  
+  <section id="home">  
+    <div class="container hero">  
+  
+      <div class="hero-text">  
+        <h1>Hi, I'm <span>Sashank Acharya</span></h1>  
+  
+        <h2>Class 12 Student | Aspiring Technology Professional</h2>  
+  
+        <p class="location">  
+          📍 Birendranagar-10, Surkhet, Nepal  
+        </p>  
+  
+        <p>  
+          Welcome to my personal portfolio. I'm passionate about  
+          learning new skills, technology, and building a strong  
+          future through continuous learning.  
+        </p>  
+  
+        <a href="#about" class="btn">About Me</a>  
+        <a href="#contact" class="btn btn-outline">Contact Me</a>  
+      </div>  
+  
+      <div class="profile-photo">  
+        Your Photo Here  
+      </div>  
+  
+    </div>  
+  </section>  
+  
+  
+  <!-- ABOUT -->  
+  <section id="about">  
+    <div class="container">  
+  
+      <h2 class="section-title">About <span>Me</span></h2>  
+  
+      <div class="about-box">  
+        <p>  
+          Hello! I'm Sashank Acharya, a Class 12 student from  
+          Birendranagar, Surkhet. I'm interested in technology,  
+          learning new skills, and building a strong career for my future.  
+        </p>  
+  
+        <br>  
+  
+        <p>  
+          I have good communication skills and believe in handling  
+          problems calmly and finding practical solutions. I also focus  
+          on managing tasks properly, learning continuously, and  
+          improving myself.  
+        </p>  
+      </div>  
+  
+    </div>  
+  </section>  
+  
+  
+  <!-- EDUCATION -->  
+  <section id="education">  
+    <div class="container">  
+  
+      <h2 class="section-title">My <span>Education</span></h2>  
+  
+      <div class="education-card">  
+  
+        <h3>Grade 12</h3>  
+  
+        <h4>  
+          Eagerbridge Boarding Secondary School and College  
+        </h4>  
+  
+        <p>  
+          Birendranagar, Surkhet, Nepal  
+        </p>  
+  
+        <p>  
+          Currently pursuing Grade 12.  
+        </p>  
+  
+        <br>  
+  
+        <p>  
+          <strong>Academic Interests:</strong>  
+          Computer Science, Mathematics, Physics and Chemistry.  
+        </p>  
+  
+      </div>  
+  
+    </div>  
+  </section>  
+  
+  
+  <!-- SKILLS -->  
+  <section id="skills">  
+    <div class="container">  
+  
+      <h2 class="section-title">My <span>Skills</span></h2>  
+  
+      <div class="skills">  
+  
+        <div class="skill">  
+          <h3>Communication</h3>  
+        </div>  
+  
+        <div class="skill">  
+          <h3>Problem Solving</h3>  
+        </div>  
+  
+        <div class="skill">  
+          <h3>Time Management</h3>  
+        </div>  
+  
+        <div class="skill">  
+          <h3>Task Management</h3>  
+        </div>  
+  
+        <div class="skill">  
+          <h3>Teamwork</h3>  
+        </div>  
+  
+        <div class="skill">  
+          <h3>Adaptability</h3>  
+        </div>  
+  
+        <div class="skill">  
+          <h3>Quick Learning</h3>  
+        </div>  
+  
+        <div class="skill">  
+          <h3>Basic Computer Skills</h3>  
+        </div>  
+  
+      </div>  
+  
+    </div>  
+  </section>  
+  
+  
+  <!-- PROJECTS -->  
+  <section id="projects">  
+    <div class="container">  
+  
+      <h2 class="section-title">My <span>Projects</span></h2>  
+  
+      <div class="projects">  
+  
+        <div class="project">  
+          <h3>Personal Portfolio Website</h3>  
+  
+          <p>  
+            A personal website created to introduce myself,  
+            showcase my skills, and share my future projects.  
+          </p>  
+        </div>  
+  
+        <div class="project">  
+          <h3>Future Projects</h3>  
+  
+          <p>  
+            I plan to build more technology and programming  
+            projects as I continue learning and developing  
+            my technical skills.  
+          </p>  
+        </div>  
+  
+      </div>  
+  
+    </div>  
+  </section>  
+  
+  
+  <!-- CONTACT -->  
+  <section id="contact">  
+    <div class="container">  
+  
+      <h2 class="section-title">Contact <span>Me</span></h2>  
+  
+      <div class="contact-box">  
+  
+        <div class="contact-item">  
+          <strong>📍 Location</strong><br>  
+          Birendranagar-10, Surkhet, Nepal  
+        </div>  
+  
+        <div class="contact-item">  
+          <strong>📱 WhatsApp</strong><br>  
+          <a  
+            href="https://wa.me/9779767066543"  
+            target="_blank"  
+            style="color:#cbd5e1;"  
+          >  
+            9767066543  
+          </a>  
+        </div>  
+  
+        <div class="contact-item">  
+          <strong>📧 Email</strong><br>  
+          <a  
+            href="mailto:acharyasashank8@gmail.com"  
+            style="color:#cbd5e1;"  
+          >  
+            acharyasashank8@gmail.com  
+          </a>  
+        </div>  
+  
+      </div>  
+  
+    </div>  
+  </section>  
+  
+  
+  <!-- FOOTER -->  
+  <footer>  
+    <p>© 2026 Sashank Acharya. All Rights Reserved.</p>  
+  </footer>  
+  
+</body>  
+</html>  
